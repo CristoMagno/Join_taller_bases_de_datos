@@ -1,0 +1,6 @@
+/*
+Inner join
+Left join
+Right join
+Full join
+*/
