@@ -34,3 +34,8 @@ SELECT name, crime_id, crime_type, committed_date, prison, start_date, end_date,
 SELECT crime_id, crime_type, committed_date, prison, start_date, end_date, behavior FROM suspects NATURAL JOIN crimes WHERE suspect_id = 100 ORDER BY committed_date;
 
 SELECT crime_id, crime_type, committed_date, prison, start_date, end_date, behavior FROM suspects NATURAL JOIN crimes WHERE suspect_id = 100 ORDER BY committed_date DESC;
+
+Select suspect_id, name, crime_id, crime_type, committed_date, prison, start_date, end_date, behavior from suspects NATURAL join crimes WHERE name = 'Kasper Good';
+Select name crime_id, crime_type, committed_date, prison, start_date, end_date, behavior from suspects NATURAL JOIN crimes where suspect_id = 338;
+Select name, crime_id, crime_type, committed_date, prison, start_date, end_date, behavior from suspects NATURAL JOIN crimes WHERE suspect_id = 100;
+Select crime_id, crime_type, committed_date, prison, start_date, end_date, behavior from suspects NATURAL JOIN crimes WHERE suspect_id = 100 ORDER BY committed_date;
