@@ -52,4 +52,77 @@ Select name, crime_type, COUNT(crime_type) from suspects NATURAL join crimes whe
 Select * from suspects natural JOIN crimes where sex = 'Male' and hair_color = 'Blonde' and scars = 'Yes' and glasses = 'Yes' and facial_hair = 'No' and tattoos = 'Yes' ORDER BY crime_type;
 Select name, crime_type, COUNT(crime_type) from suspects natural join crimes where sex = 'Male' and hair_color = 'Blonde' and scars = 'Yes' and glasses = 'Yes' and facial_hair = 'No' and tattoos = 'Yes' GROUP BY name, crime_type ORDER BY COUNT(crime_type) DESC;
 
-/**/
+/*03/10/2023*/
+--1
+select dep_nom from carga_f where eci = (select ci from empleado where nombre = 'Humberto' and apellido='Pons');
+--2
+select ci, nombre, apellido from empleado where dno = (select dnumero from departamento where dnombre = 'Investigacion');
+select ci, nombre, apellido from empleado where dno = (select dnumero from departamento where dnombre = 'Compras');
+select ci, nombre, apellido from empleado where dno = (select dnumero from departamento where dnombre = 'Adminstrativo');
+--3
+select ci, nombre, apellido from empleado where ci in (s)
+--4
+select ci, nombre, apellido from empleado where ci not in (select eci from carga_f where year(fecha_n)between '1980' and '1990');
+--agregar para que muetre con año
+
+--5
+select nombre, apellido, dno from empleado where EXISTS(select * from departamento where dnumero = '4' and dno = dnumero);
+--6
+select nombre, apellido, dno from empleado where not EXISTS (select * from departamento where dnumero = '4' and dno = dnumero);
+--7
+select dnombre from departamento where dnumero = any (select dno from empleado where salario = '2500');
+select dnombre from departamento where dnumero = some (select dno from empleado where salario = '2500');
+
+--8
+update empleado set salario = 10000 where nombre = 'Irma';
+select e.nombre , e.apellido from empleado e where  e.salario > ALL (select s.salario from empleado s, empleado e where e.superci = s.ci and e.superci is not null);
+select e.nombre , e.apellido, e.salario from empleado e where  e.salario > any (select s.salario from empleado s, empleado e where e.superci = s.ci and e.superci is not null);
+select e.nombre , e.apellido, e.salario from empleado e where  e.salario > some (select s.salario from empleado s, empleado e where e.superci = s.ci and e.superci is not null);
+
+--9 subconsultas anidadas
+select nombre, apellido from empleado where ci in (select  eci from trabaja_en where  pno in (select pnumero from proyecto where pnombre = 'Beneficios'));
+--10
+
+--11
+
+--12
+
+--13
+
+--14
+
+--15
+
+--16
+
+--17
+
+--18
+
+--19
+
+--20
+
+--21
+
+--22
+
+--23
+
+--24
+
+--25
+
+--26
+
+--27
+
+--28
+
+--29
+
+--30
+
+--31
+
+--32
