@@ -81,6 +81,18 @@ select e.nombre , e.apellido, e.salario from empleado e where  e.salario > some 
 
 --9 subconsultas anidadas
 select nombre, apellido from empleado where ci in (select  eci from trabaja_en where  pno in (select pnumero from proyecto where pnombre = 'Beneficios'));
+listar las cargas familiares de la empleada elena tapia
+listar los empleados que trabajan en el departamento administrativo
+listar los proyectos en los que los empleados tengan cargas familiares de sexo femenino
+listar todos los departamentos en los cuales todos sus empleados ganan entre 2500 y 4300 dolares
+listar todos los empleados que no tengan cargas familiares
+listar todos los proyectos que pertenecen al departamento de compras
+listar los empleados que trabajan en el productoz
+listar el nombre de los empleados que pertenezcan a mas de un proyecto
+listar todos los proyectos que pertenecen al departamento ubicado en Quito
+listar todos los empleados y sus respectivas cargas siempre y cuando hayan nacido en el mismo mes
+listar el nombre del departamento que tiene a mas de tres empleados
+listar el departamento  con el mayor salario
 --10
 
 --11
